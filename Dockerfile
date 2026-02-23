@@ -12,7 +12,7 @@ WORKDIR /src
 RUN git clone --depth 1 https://github.com/4store/4store.git .
 
 RUN ./autogen.sh \
- && ./configure --prefix=/opt/4store \
+ && CFLAGS="-fcommon" ./configure --prefix=/opt/4store \
  && make -j"$(nproc)" \
  && make install
 
