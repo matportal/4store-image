@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates git build-essential autoconf automake libtool pkg-config \
     bison flex gperf perl python3 \
-    libglib2.0-dev libpcre3-dev libxml2-dev libcurl4-openssl-dev \
+    libglib2.0-dev libpcre3-dev libxml2-dev libcurl4-gnutls-dev \
     libraptor2-dev librasqal3-dev uuid-dev zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
