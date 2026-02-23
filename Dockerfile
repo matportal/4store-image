@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates git build-essential autoconf automake libtool pkg-config \
     bison flex gperf perl python3 \
     libglib2.0-dev libpcre3-dev libxml2-dev libcurl4-gnutls-dev \
-    libraptor2-dev librasqal3-dev uuid-dev zlib1g-dev libncurses-dev \
+    libraptor2-dev librasqal3-dev uuid-dev zlib1g-dev libncurses-dev libreadline-dev \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
@@ -22,7 +22,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates bash procps \
     libglib2.0-0 libpcre3 libxml2 libcurl4 \
-    libraptor2-0 librasqal3 uuid-runtime \
+    libraptor2-0 librasqal3 uuid-runtime libreadline8 \
   && rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /opt/4store /opt/4store
